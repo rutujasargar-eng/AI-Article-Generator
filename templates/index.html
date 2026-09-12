@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Article Generator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>🤖 AI Article Generator</h1>
+            <p>Create high-quality articles using AI</p>
+        </header>
+
+        <main>
+
+            <section class="generator-card">
+
+                <label for="topic">Article Topic</label>
+
+                <textarea
+                    id="topic"
+                    placeholder="Enter your article topic..."
+                    rows="5"
+                ></textarea>
+
+
+                <div class="options">
+
+                    <div class="option">
+                        <label for="tone">Tone</label>
+
+                        <select id="tone">
+                            <option value="Professional">Professional</option>
+                            <option value="Casual">Casual</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Creative">Creative</option>
+                            <option value="Friendly">Friendly</option>
+                        </select>
+                    </div>
+
+
+                    <div class="option">
+                        <label for="length">Article Length</label>
+
+                        <select id="length">
+                            <option value="Short">Short</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="Long">Long</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <button id="generateBtn">
+                    Generate Article
+                </button>
+
+            </section>
+
+
+            <section class="result-card">
+
+                <div class="result-header">
+    <h2>Generated Article</h2>
+
+    <button id="copyBtn">
+        📋 Copy
+    </button>
+</div>
+
+<div class="improve-section">
+
+    <label for="improveType">Improve Article</label>
+
+    <select id="improveType">
+        <option value="professional">Make it more professional</option>
+        <option value="engaging">Make it more engaging</option>
+        <option value="grammar">Fix grammar</option>
+        <option value="simple">Simplify the language</option>
+        <option value="seo">Make it SEO-friendly</option>
+    </select>
+
+    <button id="improveBtn">
+        ✨ Improve Article
+    </button>
+
+</div>
+<div class="seo-section">
+
+    <h3>🔍 SEO Assistant</h3>
+
+    <p>
+        Generate SEO keywords and a meta description for your article.
+    </p>
+
+    <button id="seoBtn">
+        🔍 Generate SEO
+    </button>
+
+    <div id="seoOutput" class="seo-output hidden"></div>
+
+</div>
+
+                <div id="loading" class="loading hidden">
+                    Generating your article...
+                </div>
+
+                <div id="articleOutput">
+                    <p class="placeholder">
+                        Your AI-generated article will appear here.
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>Powered by AI • AI Article Generator</p>
+        </footer>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
